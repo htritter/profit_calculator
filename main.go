@@ -21,19 +21,19 @@ func main() {
 	var expense float64
 	var taxRate float64
 
-	fmt.Print("Please enter in your revenue in decimal format: ")
+	fmt.Print("Please enter your revenue in decimal format: ")
 	fmt.Scan(&revenue)
-	fmt.Print("Please enter in your expenses in decimal format: ")
+	fmt.Print("Please enter your expenses in decimal format: ")
 	fmt.Scan(&expense)
-	fmt.Print("Please enter in your expected taxes in decimal format: ")
+	fmt.Print("Please enter your expected taxes in decimal format: ")
 	fmt.Scan(&taxRate)
 
 	ebt := revenue - expense
-	afterTax := revenue * taxRate
-	ratio := ebt / revenue
+	profit := ebt * (1 - taxRate/100)
+	ratio := ebt / profit
 
 	fmt.Println("Your income before taxes is and after expenses is ", ebt)
-	fmt.Println("Your income after taxes is ", afterTax)
+	fmt.Println("Your income after taxes is ", profit)
 	fmt.Println("Your ratio is ", ratio)
 
 }
